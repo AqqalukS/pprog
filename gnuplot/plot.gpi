@@ -1,0 +1,7 @@
+set term postscript eps enhanced color 
+set output '|ps2pdf - plot.pdf'
+plot "data" with points title "data"
+
+set terminal latex
+set output "plot.tex"
+replot
