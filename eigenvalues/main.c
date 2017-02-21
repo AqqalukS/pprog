@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <gsl/gsl_matrix.h>
-#include <gsl/gsl_math.h>
-#include <gsl/gsl_eigen.h>
 
-int main ()
+int main(void)
 {
+	/* copy from the hint */
 	int n=20;
 	double s=1/(n+1);
 
