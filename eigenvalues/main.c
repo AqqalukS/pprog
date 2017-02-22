@@ -5,9 +5,9 @@
 
 const double pi = 3.14159265358979323844;
 
-int main(void)
+int main()
 {
-	/* copy from the hints */
+	/* copies from the hints */
 	/* Hamiltonian matrix  H′*/
 	int n=20;
 	double s=1/(n+1);
@@ -39,5 +39,14 @@ int main(void)
 	    double calculated = gsl_vector_get(eval,k);
 	    fprintf (stderr, "%i   %g   %g\n", k, exact, calculated);
 	}
+	
+	/* Plot the several lowest eigenfunctions */
+	for(int k=0;k<3;k++){
+ 	 printf("%g %g\n",0.0,0.0);
+ 	 for(int i=0;i<n;i++) printf("%g %g\n",(i+1.0)/(n+1),gsl_matrix_get(evec,i,k));
+ 	 printf("%g %g\n",1.0,0.0);
+ 	 printf("\n\n");
+ 	 }
+
 	return 0;
 }
