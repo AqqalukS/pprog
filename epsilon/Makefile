@@ -1,13 +1,7 @@
 CFLAGS = -Wall -std=gnu99
 LDFLAGS = -lm
-.PHONEY: default clean
+.PHONEY		: default clean
 	
-default : out.txt
-	cat out.txt
-
-out.txt : Epsilon
-	./Epsilon > out.txt # prints the terminal output into the txt out.txt
-
-clean :
-	rm -f Epsilon.o Epsilon out.txt
-	
+default 	: out.txt		; cat ./$<		# cat shows the out.txt ./$< 
+out.txt 	: main			; ./$< > $@		# prints the terminal output into the txt out.txt
+clean		:			; $(RM) main *.txt
