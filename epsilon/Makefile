@@ -4,4 +4,6 @@ LDFLAGS = -lm
 	
 default 	: out.txt		; cat ./$<		# cat shows the out.txt ./$< 
 out.txt 	: main			; ./$< > $@		# prints the terminal output into the txt out.txt
-clean		:			; $(RM) main *.txt
+main 		: main.o equal.o
+main.o equal.o	: equal.h
+clean		:			; $(RM) main *.txt *.o
