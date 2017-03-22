@@ -20,9 +20,7 @@ io.out.txt	: input.data.txt main-stdio		; ./$(word 2,$^) < $< > $@
 # main-cmdline
 cmd.out.txt	: input.data.txt main-cmdline		; ./$(word 2,$^) `cat $<` > $@
 
-input.data.txt	: Makefile
-	cat /dev/null > $@
-	for x in `seq 0 0.2 5`; do echo $$x >>$@ ; done
+input.data.txt	: Makefile				; echo `seq 0 0.2 5` > $@
 
 plot.ps : io.out.txt cmd.out.txt Makefile
 	echo 'set term postscript clip enhanced color' 			> $(PLOT)

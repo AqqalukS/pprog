@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+
+\begin{document}
+	\section{Problem "\LaTeX"}
+	\begin{enumerate}
+		\item Implement the error-function by integrating numerically the differential equation
+		\[
+			u'(x) = \left(\frac{2}{\sqrt{\pi}}\right) \mathrm{e}^{-x^2}
+		\]
+		with the initial
+		\[
+			u(0) = 0
+        	\]
+    		\item Make a plot of your error function in PDF or \LaTeX  format. Your main function must take three command-line arguments — let us call them a, b, and dx — and it must write (to the standard output) a table of error-function values from a to b with step dx. The command in the Makefile should be something like
+		\[
+			./\text{main} \ -3 \ 3 \ 0.2 \ > \ \text{data.txt}
+		\]
+		
+		\item Make a one- or two-page report, in \LaTeX, about the error function using the material from the corresponding article in Wikipedia.
+		\item Include your plot in the report fig.~\ref{fig:plot_error_function}.
+	\end{enumerate}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1\columnwidth]{plot.pdf}
+		\caption{caption}
+		\label{fig:plot_error_function}
+	\end{figure}
+
+	\section{Error function}
+	mathematics, the error function (also called the Gauss error function) is a special function (non-elementary) of sigmoid shape that occurs in probability, statistics, and partial differential equations describing diffusion. It is defined as:
+	\begin{align}
+		\mathrm{erf}(x) & = \frac{1}{\sqrt\pi}\int_{-x}^x e^{-t^2} \,\mathrm dt \\
+		& = \frac{2}{\sqrt\pi}\int_0^x e^{-t^2}\,\mathrm dt.
+	\end{align}
+	In statistics, for nonnegative values of $x$, the error function has the following interpretation: for a random variable $X$ that is normally distributed with mean 0 and variance ${}^1\!/_2$, $\mathrm{erf}(x)$ describes the probability of $X$ falling in the range $[-x,x]$.
+
+	\subsection{The name 'error function'}
+	The error function is used in measurement theory (using probability and statistics), and its use in other branches of mathematics is typically unrelated to the characterization of measurement errors.
+
+	In statistics, it is common to have a variable $Y$ and its unbiased estimator $\hat{Y}$. The error is then defined as $\varepsilon = \hat{Y} - Y$. This makes the error a normally distributed random variable with mean 0 (because the estimator is unbiased) and some variance $\sigma^2$; this is written as $\varepsilon \sim \mathcal{N}(0,\,\sigma^2)$. For the case where $\sigma^2 = \frac{1}{2}$, i.e. an unbiased error variable $\varepsilon \sim \mathcal{N}(0,\,\frac{1}{2})$, $\mathrm{erf}(x)$ describes the probability of the error $\varepsilon$ falling in the range $[-x,x]$; in other words, the probability that the absolute error is no greater than $x$. This is true for any random variable with distribution $\mathcal{N}(0,\,\frac{1}{2})$; but the application to error variables is how the error function got its name.
+	
+	The previous paragraph can be generalized to any variance: given a variable (such as an unbiased error variable) $\varepsilon \sim \mathcal{N}(0,\,\sigma^2)$, evaluating the error function at $\operatorname{erf}\left( \frac{x}{\sigma} \cdot \frac{1}{\sqrt{2}} \right)$ describes the probability of $\varepsilon$; falling in the range $[-x, x]$. This is used in statistics to predict behavior of any sample with respect to the population mean. This usage is similar to the Q-function, which in fact can be written in terms of the error function.
+	
+	\subsection{Derived and related functions}
+	\subsubsection{Complementary error function}
+	The \textbf{complementary error function}, denoted \emph{erfc}, is defined as
+	\begin{align}
+		\mathrm{erfc}(x) & = 1-\mathrm{erf}(x) \\
+		& = \frac{2}{\sqrt\pi} \int_x^\infty e^{-t^2}\,\mathrm dt \\
+		& = e^{-x^2} \mathrm{erfcx}(x),
+	\end{align}
+	which also defines erfcx, the scaled complementary error function (which can be used instead of erfc to avoid arithmetic underflow). Another form of $\mathrm{erfc} (x)$ for non-negative $x$ is known as Craig's formula:
+	\begin{align}
+		\mathrm{erfc}(x \mid x\geq 0) = \frac{2}{\pi} \int_{0}^{\pi/2} \mathrm{exp}\left( - \frac{x^2}{\sin\!^2\left(\theta\right) }  \right)   \,d\theta 
+	\end{align}
+	
+	\subsubsection{Imaginary error function}
+	The \textbf{imaginary error function}, denoted erfi, is defined as
+	\begin{align}
+		\mathrm{erfi}(x) &= -i \mathrm{erf}(x) \\
+		&= \frac{2}{\sqrt{\pi}} \int_{0}^{x} \mathrm e^{t^2} \,dt \\ 
+		&= \frac{2}{\sqrt{\pi}} \mathrm e^{x^2} D(x) 
+	\end{align}
+	where $D(x)$ is the Dawson function (which can be used instead of erfi to avoid arithmetic overflow).
+
+	Despite the name "imaginary error function", $\mathrm{erfi} (x)$ is real when $x$ is real.
+
+	When the error function is evaluated for arbitrary complex arguments $z$, the resulting complex error function is usually discussed in scaled form as the Faddeeva function:
+	\[
+		w(z) = \mathrm e^{-z^2} \mathrm{erfc}(-i z) = \mathrm{erfcx}(-i z).
+	\]
+\end{document}

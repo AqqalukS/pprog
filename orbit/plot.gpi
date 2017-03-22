@@ -1,0 +1,17 @@
+set term png
+set out 'p_logic.png'
+plot \
+"data" index 0 with lines
+set term png
+set out 'p_orbit.png'
+set key at 0,1.5
+plot \
+"data" index 1 using (1/$2)*sin($1):(1/$2)*cos($1) with lines \
+title "eps = 0.00, y(0) =  0.0" \
+,"data" index 2 using (1/$2)*sin($1):(1/$2)*cos($1) with lines \
+title "eps = 0.00, y(0) = -0.5" \
+,"data" index 3 using (1/$2)*sin($1):(1/$2)*cos($1) with lines \
+title "eps = 0.01, y(0) = -0.5" \
+, '-' with points pt 5 title "star"
+0 0
+e

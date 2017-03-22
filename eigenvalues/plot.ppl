@@ -1,3 +1,0 @@
-set term png
-set out "plot.png"
-plot "data" with lines

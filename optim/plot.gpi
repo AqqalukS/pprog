@@ -1,0 +1,8 @@
+set term epslatex color 
+set out 'plot.tex'
+set key height 3
+set xlabel 'time'
+set ylabel 'Activity'
+plot\
+ "data" index 0 with errorbars title "Measurements"\
+,"data" index 1 with lines title '$\mathrm f(t) = A \cdot \mathrm{e}^{-t/T} + B$'

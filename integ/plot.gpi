@@ -1,0 +1,6 @@
+set term epslatex color 
+set out 'plot.tex'
+set key height 3
+set xlabel '$\alpha$'
+set ylabel '$\mathrm E(\alpha)$'
+plot "data" with lines title '$\mathrm E(\alpha) \equiv \frac{\langle \Psi_{\alpha} \mid \mathrm{H}_{os} \mid \Psi_{\alpha} \rangle}{\langle \Psi_{\alpha} \mid \Psi_{\alpha} \rangle}$'

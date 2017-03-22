@@ -1,0 +1,58 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{listings}
+
+\begin{document}
+	\section*{Questions 7}
+	\begin{enumerate}
+		\item How do you allocate GSL vectors and matrices?
+		
+		To allocate a GSL vectors, you type:
+
+		\texttt{gsl\_vector *v1 = gsl\_vector\_alloc (size\_t n);}
+
+		\texttt{gsl\_vector *v2 = gsl\_vector\_calloc (size\_t n);}
+
+		To allocate a GSL matrix, you type:
+
+		\texttt{gsl\_matrix *m1 = gsl\_vector\_alloc (size\_t n1, size\_t n2);}
+
+		\texttt{gsl\_matrix *m2 = gsl\_vector\_calloc (size\_t n1, size\_t n2);}
+
+		the difference between \texttt{alloc} and \texttt{calloc}, is that \texttt{calloc} initializes all the elements as zeros, where \texttt{alloc} doesn't.
+		In the end, you will need to free them, with
+
+		\texttt{gsl\_vector\_free (gsl\_vector *v);}
+
+		\texttt{gsl\_matrix\_free (gsl\_vector *m);}
+		
+	\end{enumerate}
+	\section*{Problem 20: Implement the Arctangent function using integral representation.}
+	\begin{align}
+		\mathrm{arctan}(x) 
+		= \int_{0}^{x} \frac{1}{z^2+1} \, dz. \label{eq:integration_func}
+	\end{align}
+	To facilitate numerical integration reduce the argument to a reasonable interval (e.g. $[0,1]$) using the formulae (check them),
+	\begin{align}
+		\mathrm{arctan}(-x) = -\mathrm{arctan}(x) \\
+		\mathrm{arctan}\!\left(\frac{1}{x}\right) =
+		\frac{\pi}{2} - \mathrm{arctan}(x), \ \text{ if } x > 0.
+	\end{align}
+	prior to integration. Compare with the corresponding function from \texttt{<math.h>} or from \texttt{GSL}.
+	
+	The problem was solved by integrating with \texttt{gsl/gsl\_integratson.h}. First the integrand from eq.~\ref{eq:integration_func} was define:
+	\lstinputlisting[language=C, firstline=6, lastline=8]{my_math.c}
+	 and then the GSL integration rutine was build:
+	\lstinputlisting[language=C, firstline=10]{my_math.c}
+	The three if statements ensures that the function only integrates in the range of $[0,1]$.
+	
+	The result of the integration was compared using \texttt{atan(x)} from \texttt{<math.h>} in the main function, and plottet with points, see fig.~\ref{fig:arctan_plot}.
+
+	\begin{figure}[hb]
+	\centering
+	\input{plot.tex}
+	\caption{Plot of calculated and exact arctan(x), every 10th result of the arctan from math.h was plottet as points for clarity.}
+	\label{fig:arctan_plot}
+	\end{figure}
+\end{document}

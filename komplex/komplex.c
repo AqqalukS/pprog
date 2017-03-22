@@ -39,7 +39,7 @@ int main ()
 	
 	double complex i = csqrt(-2);
 	
-	b = komplex_new(i,);
+	b = komplex_new(i,i);
 	
 	komplex_set(&a,i,i);
 	

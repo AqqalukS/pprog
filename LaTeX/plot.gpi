@@ -1,0 +1,6 @@
+set term postscript enhanced clip color 
+set out 'plot.ps'
+set key left
+set xlabel 'x'
+set ylabel 'erf(x)' rotate by 90
+plot "data.txt" with lines title 'error funktion'

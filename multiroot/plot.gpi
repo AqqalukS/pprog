@@ -1,0 +1,11 @@
+set term postscript enhanced clip color
+set out "plot.ps"
+set ylabel 'F_e (r)'
+set xlabel 'r'
+plot\
+ "data" index 0 using 1:2 with lines title 'r_{max} = 2'\
+ ,"data" index 1 using 1:2 with lines title 'r_{max} = 3'\
+ ,"data" index 2 using 1:2 with lines title 'r_{max} = 4'\
+ ,"data" index 3 using 1:2 with lines title 'r_{max} = 6'\
+ ,"data" index 4 using 1:2 with lines title 'r_{max} = 8'\
+ ,"data" index 4 every 5 using 1:3 with points title 'exact'
