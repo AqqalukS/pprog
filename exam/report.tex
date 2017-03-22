@@ -45,7 +45,7 @@
 	\lstinputlisting[language=C, firstline=6, lastline=8]{my_math.c}
 	 and then the GSL integration rutine was build:
 	\lstinputlisting[language=C, firstline=10]{my_math.c}
-	The three if statements ensures that the function only integrates in the range of $[0,1]$.
+	The three if statements ensures that the function only integrates in the range of $[0,1]$, sence arctan converges to $\frac{\pi}{2}$ for $x \to \infty$ and $-\frac{\pi}{2}$ for $x \to -\infty$.
 	
 	The result of the integration was compared using \texttt{atan(x)} from \texttt{<math.h>} in the main function, and plottet with points, see fig.~\ref{fig:arctan_plot}.
 

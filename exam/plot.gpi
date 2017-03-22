@@ -1,4 +1,4 @@
-set term epslatex
+set term epslatex color
 set out "plot.tex"
 set key left
 set xlabel 'x'

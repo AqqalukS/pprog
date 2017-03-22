@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  22 MAR 2017 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.11)  22 MAR 2017 22:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -290,11 +290,11 @@ Overfull \hbox (75.00427pt too wide) in paragraph at lines 24--25
 \gptboxwidth=\skip51
 \gptboxtext=\box31
 Package epstopdf Info: Source file: <plot.eps>
-(epstopdf)                    date: 2017-03-22 17:56:39
-(epstopdf)                    size: 23264 bytes
+(epstopdf)                    date: 2017-03-22 22:51:15
+(epstopdf)                    size: 23263 bytes
 (epstopdf)             Output file: <plot-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-03-22 17:56:40
-(epstopdf)                    size: 7071 bytes
+(epstopdf)                    date: 2017-03-22 22:51:17
+(epstopdf)                    size: 7068 bytes
 (epstopdf)             Command: <repstopdf --outfile=plot-eps-converted-to.pdf 
 plot.eps>
 (epstopdf)             \includegraphics on input line 110.
@@ -329,7 +329,7 @@ st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist
 onts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (2 pages, 106260 bytes).
+Output written on report.pdf (2 pages, 107219 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
